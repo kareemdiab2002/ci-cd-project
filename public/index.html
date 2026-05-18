@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recommendation System</title>
+</head>
+<body>
+  <h1>Simple Recommendation System</h1>
+
+  <input id="userInput" placeholder="Enter input like hot, cold, gym" />
+  <button onclick="getRecommendation()">Recommend</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    async function getRecommendation() {
+      const input = document.getElementById('userInput').value;
+      const response = await fetch('/recommend/' + input);
+      const data = await response.json();
+      document.getElementById('result').innerText =
+        'Recommendation: ' + data.recommendation;
+    }
+  </script>
+</body>
+</html>

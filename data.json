@@ -1,0 +1,6 @@
+[
+  { "input": "hot", "recommendation": "Summer" },
+  { "input": "cold", "recommendation": "Winter" },
+  { "input": "gym", "recommendation": "Gym Membership" },
+  { "input": "study", "recommendation": "Laptop" }
+]

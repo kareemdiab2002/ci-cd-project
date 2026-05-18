@@ -1,22 +1,22 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
-const recommendations = {
-  hot: 'Summer',
-  cold: 'Winter',
-  gym: 'Gym Membership',
-  study: 'Laptop'
-};
+app.use(express.static('public'));
 
 app.get('/recommend/:input', (req, res) => {
   const input = req.params.input.toLowerCase();
 
-  const result = recommendations[input] || 'No recommendation found';
+  const dataPath = path.join(__dirname, 'data.json');
+  const items = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-  res.send({
+  const match = items.find(item => item.input.toLowerCase() === input);
+
+  res.json({
     input,
-    recommendation: result
+    recommendation: match ? match.recommendation : 'No recommendation found'
   });
 });
 

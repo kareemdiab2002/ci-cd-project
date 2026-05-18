@@ -5,7 +5,7 @@ const app = express();
 const recommendations = {
   hot: 'Summer',
   cold: 'Winter',
-  gym: 'Protein',
+  gym: 'Gym Membership',
   study: 'Laptop'
 };
 

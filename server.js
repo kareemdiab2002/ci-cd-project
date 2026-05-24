@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send(`
-    <h1>Simple Recommendation System</h1>
+    <h1>Simple Recommendation System Updated</h1>
     <form method="GET" action="/recommend">
       <input type="text" name="input" placeholder="Enter input like hot, cold, gym" />
       <button type="submit">Recommend</button>
